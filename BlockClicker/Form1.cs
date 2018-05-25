@@ -32,15 +32,15 @@ namespace BlockClicker
 
             BlockClickerForm_Load(sender, e); //neue Blöcke erzeugen
 
+            lblTimer.Text = newTime.ToString(); //neue Zeit auf Benutzeroberfläche ausgeben
+
             if (newTime <= 0) //wenn Zeit abgelaufen
             {
                 this.countdownTimer.Stop(); //Timer stoppen
 
-                newTime = 0;
                 MessageBox.Show(this, "Zeit abgelaufen."); //Nachricht ausgeben
             }
 
-            lblTimer.Text = newTime.ToString(); //neue Zeit auf Benutzeroberfläche ausgeben
         }
 
         private void BlockClickerForm_Load(object sender, EventArgs e)
@@ -75,6 +75,7 @@ namespace BlockClicker
 
         private void NewBlockOnClick(object sender, EventArgs eventArgs)
         {
+ 
             int newScore = Convert.ToInt32(this.lblScore.Text) + 1; //neue Punktzahl berechnen
 
             this.lblScore.Text = newScore.ToString(); //neue Punktzahl anzeigen
